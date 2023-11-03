@@ -18,7 +18,7 @@ export const CardTitle = ({
         }, #${gradient && gradient[2]})`,
       }}
       className={twMerge(
-        "group-hover:translate-y-0 translate-y-[200%] uppercase font-medium text-2xl text-shadow-black w-full text-center shadow-black font-valorant duration-500 absolute bottom-0 text-white",
+        "group-hover:translate-y-0 translate-y-[200%] uppercase font-medium text-2xl text-shadow-black w-full text-center shadow-black font-valorant duration-300 absolute bottom-0 text-white",
         className
       )}
       {...props}
