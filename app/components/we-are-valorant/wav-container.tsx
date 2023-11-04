@@ -24,12 +24,9 @@ export const WavContainer = () => {
         </Wav.Div>
 
         <Wav.Div className="sm:w-8/12 w-10/12 mx-auto">
-          <BlurImage
-            src="https://cdnportal.mobalytics.gg/production/2022/03/edd7c8df-chamber-haven-pistol-gif.gif"
-            alt="This is Valorant"
-            width={500}
-            height={500}
-          />
+            <video autoPlay muted loop className='aspect-video w-full'>
+            <source src='/chamber-haven-pistol.mp4' type="video/mp4" />
+          </video>
           <Button className="px-5 py-1 absolute top-14 -left-8">Jogo</Button>
         </Wav.Div>
       </Wav.Root>

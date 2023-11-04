@@ -18,7 +18,7 @@ export const AgentsContainer = () => {
         </Agents.Description>
       </FlexDiv>
       <FlexDiv col className="items-center justify-center">
-        <Button className="uppercase m-auto absolute z-30 bg-white text-red-500 text-lg px-4 py-2">
+        <Button className="uppercase m-auto absolute z-30 bg-white text-red-600 text-lg px-4 py-2">
           <Link href={"/agents"}>Ver todos os agentes</Link>
         </Button>
         <BlurImage

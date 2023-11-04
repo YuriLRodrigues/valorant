@@ -11,15 +11,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Image from 'next/image';
 
 type AgentUuidProps = {
   uuid: string;
 };
 
 const AgentDetailsContainer = async ({ uuid }: AgentUuidProps) => {
+
+
+
   const agentDetails: AgentListProps = await FetchData({
     url: `https://valorant-api.com/v1/agents/${uuid}?language=pt-BR`,
   });
+
+
 
   return (
     <>
@@ -61,11 +67,15 @@ const AgentDetailsContainer = async ({ uuid }: AgentUuidProps) => {
               {agentDetails.data.abilities.map((ablitie) => (
                 <TableRow key={ablitie.displayName}>
                   <TableCell className="flex flex-col items-center justify-center">
-                    <BlurImage
+                    {ablitie.displayIcon && (
+                    <Image
                       src={ablitie.displayIcon}
                       alt={ablitie.displayName + "-IconImg"}
                       className="dark:bg-transparent bg-black rounded p-2"
+                      width={50}
+                      height={50}
                     />
+                    )}
                     <AgentDetails.Description>
                       {ablitie.displayName}
                     </AgentDetails.Description>

@@ -7,7 +7,7 @@ export const Button = ({ className, ...props }: ButtonProps) => {
   return (
     <button
       className={twMerge(
-        "p-2 text-white bg-red-500 w-fit rounded font-medium",
+        "p-2 text-white bg-red-600 w-fit rounded font-medium",
         className
       )}
       {...props}

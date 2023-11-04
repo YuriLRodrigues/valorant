@@ -10,7 +10,7 @@ export const AgentsSectionRoot = ({
   return (
     <section
       className={twMerge(
-        "my-20 pt-10 flex flex-col bg-red-500 justify-center",
+        "my-20 pt-10 flex flex-col bg-red-600 justify-center",
         className
       )}
       {...props}

@@ -1,5 +1,6 @@
 import { DefaultHeading } from "@/components/interface/default-heading";
 import { ListMaps } from "./components/list-maps";
+import { Suspense } from 'react';
 
 export default function Maps() {
   return (
@@ -7,7 +8,9 @@ export default function Maps() {
       <DefaultHeading tag="h1" className="font-valorant">
         Mapas
       </DefaultHeading>
-      <ListMaps />;
+      <Suspense>
+        <ListMaps />
+      </Suspense>
     </>
   );
 }

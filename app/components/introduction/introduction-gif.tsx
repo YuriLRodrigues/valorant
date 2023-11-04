@@ -1,3 +1,8 @@
+
 export const GifIntroduction = () => {
-  return <img src="/valorant.gif" className="w-full" />;
+  return (
+      <video autoPlay muted loop className='w-full'>
+        <source src='/valorant.mp4' type="video/mp4" />
+      </video>
+  )
 };

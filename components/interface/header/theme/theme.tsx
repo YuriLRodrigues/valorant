@@ -19,6 +19,7 @@ export const Theme = () => {
 
   return (
     <button
+      aria-label="button-theme"
       className="text-lg bg-transparent border-none pl-2"
       onClick={() =>
         setTheme(mount && currentTheme === "dark" ? "light" : "dark")

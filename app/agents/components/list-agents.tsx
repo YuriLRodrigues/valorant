@@ -1,8 +1,8 @@
 import { AutomaticGrid } from "@/components/interface/automatic-grid";
 import { Card } from "@/components/interface/card";
-import { BlurImage } from "@/components/ui/blur-image";
 import { AgentsListProps } from "@/types/agents-list-types";
 import { FetchData } from "@/utils/fetch-data";
+import Image from 'next/image';
 
 export const ListAgents = async () => {
   const agents: AgentsListProps = await FetchData({
@@ -21,14 +21,20 @@ export const ListAgents = async () => {
                 key={agent.uuid}
                 gradient={agent.backgroundGradientColors}
               >
-                <BlurImage
+                <Image
                   src={agent.background}
                   alt={agent.displayName + "-Agent-BG"}
+                  width={318}
+                  height={465}
+                  sizes='(max-width: 768px) 100vw, 318px'
                 />
-                <BlurImage
+                <Image
                   className="absolute"
                   src={agent.fullPortraitV2}
                   alt={agent.displayName + "-Agent"}
+                  width={318}
+                  height={465}
+                  sizes='(max-width: 768px) 100vw, 318px'
                 />
                 <Card.Title gradient={agent.backgroundGradientColors}>
                   {agent.displayName}
