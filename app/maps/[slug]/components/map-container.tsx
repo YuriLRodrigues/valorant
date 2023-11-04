@@ -31,7 +31,6 @@ export const MapContainer = async ({ mapId }: MapContainerProps) => {
   const { data: mapResume }: MapProps = await FetchData({
     url: `https://valorant-api.com/v1/maps/${mapId}?language=pt-BR`,
   });
-  console.log(mapResume);
 
   return (
     <Container>
@@ -39,11 +38,10 @@ export const MapContainer = async ({ mapId }: MapContainerProps) => {
         {mapResume.displayName}
       </Heading>
       <FlexContainer
-        className="border-2 border-white"
         variant="centered-all"
         position="centered"
         my="xl"
-        width="sm"
+        width="5xl"
       >
         <Image
           src={mapResume.splash}

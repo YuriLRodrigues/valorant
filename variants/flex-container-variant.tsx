@@ -71,7 +71,6 @@ export const FlexContainerVariants = tv({
   defaultVariants: {
     gap: "2",
     position: "left",
-    width: "full",
     flex: "row",
   },
 });
