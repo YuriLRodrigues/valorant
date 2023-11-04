@@ -1,16 +1,17 @@
-import { DefaultHeading } from "@/components/interface/default-heading";
+import { Heading } from "@/components/interface/heading";
 import { ListAgents } from "./components/list-agents";
-import { Suspense } from 'react';
+import { Suspense } from "react";
+import { Container } from "@/components/interface/container";
 
 export default function Agents() {
   return (
-    <>
-      <DefaultHeading tag="h1" className="font-valorant">
+    <Container>
+      <Heading tag="h1" position="centered" size="lg" className="font-valorant">
         Agentes
-      </DefaultHeading>
+      </Heading>
       <Suspense>
         <ListAgents />
       </Suspense>
-    </>
+    </Container>
   );
 }

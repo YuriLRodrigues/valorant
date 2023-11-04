@@ -24,8 +24,8 @@ export const WavContainer = () => {
         </Wav.Div>
 
         <Wav.Div className="sm:w-8/12 w-10/12 mx-auto">
-            <video autoPlay muted loop className='aspect-video w-full'>
-            <source src='/chamber-haven-pistol.mp4' type="video/mp4" />
+          <video autoPlay muted loop className="aspect-video w-full">
+            <source src="/chamber-haven-pistol.mp4" type="video/mp4" />
           </video>
           <Button className="px-5 py-1 absolute top-14 -left-8">Jogo</Button>
         </Wav.Div>

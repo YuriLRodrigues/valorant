@@ -15,11 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className="dark:bg-zinc-900 bg-zinc-100 overflow-x-hidden font-poppins">
         <Providers>
           <Header />
-          <main>{children}</main>
+          {children}
         </Providers>
       </body>
     </html>

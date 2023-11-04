@@ -1,10 +1,28 @@
+import { ContainerVariants } from "@/variants/container-variant";
 import { ComponentProps } from "react";
-import { twMerge } from "tailwind-merge";
+import { type VariantProps } from "tailwind-variants";
 
-type ContainerProps = ComponentProps<"div">;
+type ContainerProps = ComponentProps<"div"> &
+  VariantProps<typeof ContainerVariants> & {
+    tag?: "div" | "main";
+  };
 
-export const Container = ({ className, ...props }: ContainerProps) => {
+export const Container = ({
+  className,
+  position,
+  width,
+  tag,
+  ...props
+}: ContainerProps) => {
+  const Comp = tag ?? "div";
   return (
-    <div className={twMerge("py-2 mx-auto max-w-2xl", className)} {...props} />
+    <Comp
+      className={ContainerVariants({
+        position,
+        width,
+        className,
+      })}
+      {...props}
+    />
   );
 };

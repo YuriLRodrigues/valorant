@@ -1,6 +1,7 @@
-import { AgentsListProps } from '@/types/agents-list-types';
+import { AgentsListProps } from "@/types/agents-list-types";
 import AgentDetailsContainer from "./components/agent-details/agent-details-container";
-import { FetchData } from '@/utils/fetch-data';
+import { FetchData } from "@/utils/fetch-data";
+import { Container } from "@/components/interface/container";
 
 export async function generateStaticParams() {
   const agents: AgentsListProps = await FetchData({
@@ -11,11 +12,15 @@ export async function generateStaticParams() {
 
   return agentsList.map((post) => ({
     slug: post.uuid,
-  }))
+  }));
 }
 
 const Agent = ({ params }: { params: { slug: string } }) => {
-  return <AgentDetailsContainer uuid={params.slug} />;
+  return (
+    <Container>
+      <AgentDetailsContainer uuid={params.slug} />
+    </Container>
+  );
 };
 
 export default Agent;

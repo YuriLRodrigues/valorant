@@ -1,6 +1,12 @@
 import { Container } from "@/components/interface/container";
+import { Heading } from "@/components/interface/heading";
+import { FlexContainer } from "@/components/interface/flex-container";
 import { FetchData } from "@/utils/fetch-data";
+import Image from "next/image";
 import { ComponentProps } from "react";
+import { Map } from "./index";
+import { Text } from "@/components/interface/text";
+import { GiIceBomb } from "react-icons/gi";
 
 type MapProps = {
   data: {
@@ -22,13 +28,37 @@ type MapContainerProps = ComponentProps<"div"> & {
 };
 
 export const MapContainer = async ({ mapId }: MapContainerProps) => {
-  const { data: map }: MapProps = await FetchData({
-    url: `https://valorant-api.com/v1/maps/${mapId}`,
+  const { data: mapResume }: MapProps = await FetchData({
+    url: `https://valorant-api.com/v1/maps/${mapId}?language=pt-BR`,
   });
+  console.log(mapResume);
 
   return (
     <Container>
-      <div>Teste</div>
+      <Heading tag="h1" position="centered" size="lg">
+        {mapResume.displayName}
+      </Heading>
+      <FlexContainer
+        className="border-2 border-white"
+        variant="centered-all"
+        position="centered"
+        my="xl"
+        width="sm"
+      >
+        <Image
+          src={mapResume.splash}
+          alt={mapResume.displayName}
+          width={700}
+          height={500}
+          className="object-center object-cover aspect-video max-w-2xl"
+        />
+        <Map.Content>
+          <Text>{mapResume.narrativeDescription}</Text>
+          <Text className="flex gap-2 items-center">
+            <GiIceBomb /> Bombs: {mapResume.tacticalDescription}
+          </Text>
+        </Map.Content>
+      </FlexContainer>
     </Container>
   );
 };
