@@ -6,7 +6,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./variants/**/*.{ts,tsx}"
+    "./variants/**/*.{ts,tsx}",
   ],
   theme: {
     container: {
@@ -24,6 +24,18 @@ module.exports = {
         "auto-fit-500": "repeat(auto-fit, minmax(500px, 1fr))",
       },
       colors: {
+        "muted-1": "var(--muted-1)",
+        "muted-2": "var(--muted-2)",
+        "muted-3": "var(--muted-3)",
+        "muted-4": "var(--muted-4)",
+        "muted-5": "var(--muted-5)",
+        "muted-6": "var(--muted-6)",
+        "muted-7": "var(--muted-7)",
+        "muted-8": "var(--muted-8)",
+        "muted-9": "var(--muted-9)",
+        "muted-10": "var(--muted-10)",
+        "muted-11": "var(--muted-11)",
+        "muted-12": "var(--muted-12)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

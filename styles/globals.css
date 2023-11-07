@@ -60,6 +60,19 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --muted-1: #fcfcfc;
+    --muted-2: #f9f9f9;
+    --muted-3: #f0f0f0;
+    --muted-4: #e8e8e8;
+    --muted-5: #e0e0e0;
+    --muted-6: #d9d9d9;
+    --muted-7: #cecece;
+    --muted-8: #bbbbbb;
+    --muted-9: #8d8d8d;
+    --muted-10: #838383;
+    --muted-11: #646464;
+    --muted-12: #202020;
   }
 
   .dark {
@@ -90,14 +103,18 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-  }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+    --muted-1: #111111;
+    --muted-2: #191919;
+    --muted-3: #222222;
+    --muted-4: #2a2a2a;
+    --muted-5: #313131;
+    --muted-6: #3a3a3a;
+    --muted-7: #484848;
+    --muted-8: #606060;
+    --muted-9: #6e6e6e;
+    --muted-10: #7b7b7b;
+    --muted-11: #b4b4b4;
+    --muted-12: #eeeeee;
   }
 }
