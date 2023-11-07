@@ -33,7 +33,7 @@ export const MapContainer = async ({ mapId }: MapContainerProps) => {
   });
 
   return (
-    <Container>
+    <Container tag="main">
       <Heading tag="h1" position="centered" size="lg">
         {mapResume.displayName}
       </Heading>
@@ -42,19 +42,22 @@ export const MapContainer = async ({ mapId }: MapContainerProps) => {
         position="centered"
         my="xl"
         width="5xl"
+        flex="col"
       >
         <Image
           src={mapResume.splash}
           alt={mapResume.displayName}
           width={700}
           height={500}
-          className="object-center object-cover aspect-video max-w-2xl"
+          className="object-center object-cover aspect-video w-full rounded-lg"
         />
-        <Map.Content>
+        <Map.Content className="mt-8">
           <Text>{mapResume.narrativeDescription}</Text>
-          <Text className="flex gap-2 items-center">
-            <GiIceBomb /> Bombs: {mapResume.tacticalDescription}
-          </Text>
+          {mapResume.tacticalDescription && (
+            <Text className="flex gap-2 items-center">
+              <GiIceBomb /> Bombs: {mapResume.tacticalDescription}
+            </Text>
+          )}
         </Map.Content>
       </FlexContainer>
     </Container>

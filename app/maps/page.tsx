@@ -5,7 +5,7 @@ import { Container } from "@/components/interface/container";
 
 export default function Maps() {
   return (
-    <Container>
+    <Container tag="main">
       <Heading tag="h1" position="centered" size="lg" className="font-valorant">
         Mapas
       </Heading>
