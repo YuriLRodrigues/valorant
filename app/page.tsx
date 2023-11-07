@@ -8,7 +8,7 @@ import { Container } from "@/components/interface/container";
 
 export default function HomeIntroduction() {
   return (
-    <Container>
+    <Container tag="main" className="p-0 m-0">
       <IntroductionContainer />
       <NewsContainer />
       <WavContainer />

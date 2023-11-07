@@ -16,7 +16,7 @@ export const CardRoot = ({
   ...props
 }: CardRootProps) => {
   return (
-    <Link href={`${redirect}/${uuid}`}>
+    <Link href={`${redirect}/${uuid}`} prefetch={false}>
       <div
         style={{
           background: `linear-gradient(#${gradient && gradient[0]}, #${
