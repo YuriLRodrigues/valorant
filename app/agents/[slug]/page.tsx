@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 
 const Agent = ({ params }: { params: { slug: string } }) => {
   return (
-    <Container>
+    <Container tag="main">
       <AgentDetailsContainer uuid={params.slug} />
     </Container>
   );
