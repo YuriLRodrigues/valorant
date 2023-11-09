@@ -15,20 +15,35 @@ export const CardRoot = ({
   redirect,
   ...props
 }: CardRootProps) => {
+  if (redirect !== undefined || !uuid !== undefined)
+    return (
+      <Link href={`${redirect}/${uuid}`} prefetch={false}>
+        <div
+          style={{
+            background: `linear-gradient(#${gradient && gradient[0]}, #${
+              gradient && gradient[1]
+            }, #${gradient && gradient[2]})`,
+          }}
+          className={twMerge(
+            "w-full rounded flex flex-col items-center justify-center cursor-pointer overflow-hidden group relative",
+            className
+          )}
+          {...props}
+        />
+      </Link>
+    );
   return (
-    <Link href={`${redirect}/${uuid}`} prefetch={false}>
-      <div
-        style={{
-          background: `linear-gradient(#${gradient && gradient[0]}, #${
-            gradient && gradient[1]
-          }, #${gradient && gradient[2]})`,
-        }}
-        className={twMerge(
-          "w-full rounded flex flex-col items-center justify-center cursor-pointer overflow-hidden group relative",
-          className
-        )}
-        {...props}
-      />
-    </Link>
+    <div
+      style={{
+        background: `linear-gradient(#${gradient && gradient[0]}, #${
+          gradient && gradient[1]
+        }, #${gradient && gradient[2]})`,
+      }}
+      className={twMerge(
+        "w-full rounded flex flex-col items-center justify-center cursor-pointer overflow-hidden group relative",
+        className
+      )}
+      {...props}
+    />
   );
 };
