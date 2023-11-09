@@ -15,7 +15,7 @@ export const CardRoot = ({
   redirect,
   ...props
 }: CardRootProps) => {
-  if (redirect !== undefined || !uuid !== undefined)
+  if (redirect !== undefined || uuid !== undefined) {
     return (
       <Link href={`${redirect}/${uuid}`} prefetch={false}>
         <div
@@ -32,6 +32,8 @@ export const CardRoot = ({
         />
       </Link>
     );
+  }
+
   return (
     <div
       style={{
