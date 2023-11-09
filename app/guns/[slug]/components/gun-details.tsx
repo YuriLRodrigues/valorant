@@ -5,6 +5,8 @@ import { GunDetails } from "@/types/gun-details-types";
 import { FetchData } from "@/utils/fetch-data";
 import Image from "next/image";
 import { GunSkinsSlider } from "./gun-skins-slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { GunListSkins } from "./gun-list-skins";
 
 type GunDetailsProps = {
   uuid: string;
@@ -25,7 +27,7 @@ export const GunDetailsContainer = async ({ uuid }: GunDetailsProps) => {
         flex="col"
         my="xl"
         gap="10"
-        width="4xl"
+        width="5xl"
         position="centered"
       >
         <Image
@@ -35,9 +37,21 @@ export const GunDetailsContainer = async ({ uuid }: GunDetailsProps) => {
           height={500}
           className="object-cover object-center mx-auto"
         />
-        <Text position="left">Categoria: {gun.category.split("::")[1]}</Text>
 
-        <GunSkinsSlider skins={gun.skins} />
+        <Tabs defaultValue="list">
+          <TabsList className="mb-10 grid w-52 grid-cols-2">
+            <TabsTrigger value="list">Lista</TabsTrigger>
+            <TabsTrigger value="slide">Slide</TabsTrigger>
+          </TabsList>
+          <TabsContent value="list">
+            <Heading>Skins</Heading>
+            <GunListSkins skins={gun.skins} />
+          </TabsContent>
+          <TabsContent value="slide">
+            <Heading size="md">Skins</Heading>
+            <GunSkinsSlider skins={gun.skins} />
+          </TabsContent>
+        </Tabs>
       </FlexContainer>
     </>
   );

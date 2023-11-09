@@ -1,20 +1,19 @@
 "use client";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-// import "swiper/css/effect-parallax";
-import "swiper/css/autoplay";
 import { GunDetailsSkins } from "@/types/gun-details-types";
-import Image from "next/image";
-import { Text } from "@/components/interface/text";
 import { FlexContainer } from "@/components/interface/flex-container";
 import { Heading } from "@/components/interface/heading";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import Image from "next/image";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import "swiper/css/autoplay";
 
 type GunSkinSlideProps = {
   skins: Array<GunDetailsSkins>;
@@ -40,22 +39,30 @@ export const GunSkinsSlider = ({ skins }: GunSkinSlideProps) => {
           delay: 3000,
           disableOnInteraction: false,
         }}
-        className="relative overflow-hidden cursor-grab"
+        className="relative overflow-hidden cursor-grab min-h-full mt-10 flex"
       >
         {skins.map((skin) =>
           skin.chromas.map((chroma) => {
-            if (chroma.displayIcon === null) return;
+            if (
+              !chroma.displayIcon ||
+              !chroma.displayName ||
+              !chroma.fullRender
+            )
+              return;
             if (
               chroma.displayName === "Vandal" ||
               chroma.displayIcon === "Padrão"
             )
               return;
             return (
-              <SwiperSlide key={chroma.displayName} className="min-h-full">
+              <SwiperSlide
+                key={chroma.displayName}
+                className="px-10 md:pt-0 mt-4 h-full"
+              >
                 <FlexContainer
                   variant="centered-all"
                   flex="col"
-                  className="mx-auto space-y-6 min-h-full"
+                  className="mx-auto space-y-6 h-full p-4"
                 >
                   <Image
                     key={chroma.uuid}
@@ -63,7 +70,7 @@ export const GunSkinsSlider = ({ skins }: GunSkinSlideProps) => {
                     width={400}
                     height={400}
                     alt={chroma.displayName}
-                    className="object-cover max-w-[500px] max-h-[150px] object-center mx-auto w-full"
+                    className="object-cover max-w-[300px] object-center mx-auto w-full"
                   />
                   <Heading
                     size="2xs"
@@ -73,7 +80,6 @@ export const GunSkinsSlider = ({ skins }: GunSkinSlideProps) => {
                   >
                     {chroma.displayName}
                   </Heading>
-                  <Text>{skin.levels[0].displayName}</Text>
                 </FlexContainer>
               </SwiperSlide>
             );

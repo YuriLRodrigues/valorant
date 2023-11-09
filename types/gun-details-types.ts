@@ -58,6 +58,6 @@ export type GunDetails = {
       newImage2: string;
       assetPath: string;
     };
-    skins: GunDetailsSkins;
+    skins: Array<GunDetailsSkins>;
   };
 };
