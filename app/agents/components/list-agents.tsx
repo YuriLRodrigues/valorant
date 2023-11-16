@@ -1,18 +1,16 @@
 import { AutomaticGrid } from "@/components/interface/automatic-grid";
 import { Card } from "@/components/interface/card";
-import { AgentsListProps } from "@/types/agents-list-types";
-import { FetchData } from "@/utils/fetch-data";
+
+import { findAgents } from "@/lib/actions";
 import Image from "next/image";
 
 export const ListAgents = async () => {
-  const agents: AgentsListProps = await FetchData({
-    url: "https://valorant-api.com/v1/agents?language=pt-BR",
-  });
+  const agents = await findAgents();
 
   return (
     <AutomaticGrid>
-      {agents.data.length > 0 &&
-        agents.data.map(
+      {agents.length > 0 &&
+        agents.map(
           (agent) =>
             agent.isPlayableCharacter && (
               <Card.Root

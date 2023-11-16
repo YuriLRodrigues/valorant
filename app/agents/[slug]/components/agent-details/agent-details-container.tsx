@@ -1,6 +1,4 @@
-import { FetchData } from "@/utils/fetch-data";
 import { AgentDetails } from "./index";
-import { AgentListProps } from "@/types/agent-list-types";
 import { BlurImage } from "@/components/ui/blur-image";
 import { FlexDiv } from "@/components/ui/flex-div";
 import {
@@ -13,42 +11,41 @@ import {
 } from "@/components/ui/table";
 import Image from "next/image";
 import { Heading } from "@/components/interface/heading";
+import { findAgentsById } from "@/lib/actions";
 
 type AgentUuidProps = {
   uuid: string;
 };
 
 const AgentDetailsContainer = async ({ uuid }: AgentUuidProps) => {
-  const agentDetails: AgentListProps = await FetchData({
-    url: `https://valorant-api.com/v1/agents/${uuid}?language=pt-BR`,
-  });
+  const agentDetails = await findAgentsById(uuid);
 
   return (
     <AgentDetails.Root>
       <Heading position="centered" tag="h1" size="lg" className="font-valorant">
-        {agentDetails.data.displayName}
+        {agentDetails.displayName}
       </Heading>
       <FlexDiv
         style={{
-          background: `linear-gradient(#${agentDetails.data.backgroundGradientColors[0]}, #${agentDetails.data.backgroundGradientColors[1]}, #${agentDetails.data.backgroundGradientColors[2]})`,
+          background: `linear-gradient(#${agentDetails.backgroundGradientColors[0]}, #${agentDetails.backgroundGradientColors[1]}, #${agentDetails.backgroundGradientColors[2]})`,
         }}
         className="md:rounded-md rounded my-6 justify-between"
       >
         <BlurImage
-          src={agentDetails.data.background}
-          alt={agentDetails.data.displayName + "-AgentCardImage"}
+          src={agentDetails.background}
+          alt={agentDetails.displayName + "-AgentCardImage"}
           className="max-w-[60%]"
         />
         <BlurImage
-          src={agentDetails.data.fullPortraitV2}
-          alt={agentDetails.data.displayName + "-AgentImage"}
+          src={agentDetails.fullPortraitV2}
+          alt={agentDetails.displayName + "-AgentImage"}
           className="max-w-[100%] absolute"
         />
       </FlexDiv>
       <AgentDetails.Content>
         <AgentDetails.Title>Sobre:</AgentDetails.Title>
         <AgentDetails.Description>
-          {agentDetails.data.description}
+          {agentDetails.description}
         </AgentDetails.Description>
         <AgentDetails.Title>Habilidades:</AgentDetails.Title>
         <Table>
@@ -59,7 +56,7 @@ const AgentDetailsContainer = async ({ uuid }: AgentUuidProps) => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {agentDetails.data.abilities.map((ablitie) => (
+            {agentDetails.abilities.map((ablitie) => (
               <TableRow key={ablitie.displayName}>
                 <TableCell className="flex flex-col items-center justify-center">
                   {ablitie.displayIcon && (
