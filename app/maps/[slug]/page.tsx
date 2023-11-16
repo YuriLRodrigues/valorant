@@ -1,13 +1,12 @@
 import { FetchData } from "@/utils/fetch-data";
 import { MapContainer } from "./components/map-container";
 import { MapsListProps } from "@/types/maps-list-types";
+import { findMaps } from "@/lib/actions";
 
 export async function generateStaticParams() {
-  const maps: MapsListProps = await FetchData({
-    url: "https://valorant-api.com/v1/maps?language=pt-BR",
-  });
+  const maps = await findMaps();
 
-  return maps.data.map((post) => ({
+  return maps.map((post) => ({
     slug: post.uuid,
   }));
 }

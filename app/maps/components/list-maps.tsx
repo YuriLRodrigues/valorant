@@ -1,19 +1,15 @@
 import { AutomaticGrid } from "@/components/interface/automatic-grid";
 import { Card } from "@/components/interface/card";
-import { BlurImage } from "@/components/ui/blur-image";
-import { MapsListProps } from "@/types/maps-list-types";
-import { FetchData } from "@/utils/fetch-data";
+import { findMaps } from "@/lib/actions";
 import Image from "next/image";
 
 export const ListMaps = async () => {
-  const maps: MapsListProps = await FetchData({
-    url: "https://valorant-api.com/v1/maps?language=pt-BR",
-  });
+  const maps = await findMaps();
 
   return (
     <AutomaticGrid>
-      {maps.data.length > 0 &&
-        maps.data.map((map) => (
+      {maps.length > 0 &&
+        maps.map((map) => (
           <Card.Root uuid={map.uuid} redirect="maps" key={map.uuid}>
             <Image
               src={map.splash}

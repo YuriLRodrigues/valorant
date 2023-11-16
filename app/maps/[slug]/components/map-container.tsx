@@ -7,6 +7,7 @@ import { ComponentProps } from "react";
 import { Map } from "./index";
 import { Text } from "@/components/interface/text";
 import { GiIceBomb } from "react-icons/gi";
+import { findMapById } from "@/lib/actions";
 
 type MapProps = {
   data: {
@@ -28,9 +29,7 @@ type MapContainerProps = ComponentProps<"div"> & {
 };
 
 export const MapContainer = async ({ mapId }: MapContainerProps) => {
-  const { data: mapResume }: MapProps = await FetchData({
-    url: `https://valorant-api.com/v1/maps/${mapId}?language=pt-BR`,
-  });
+  const mapResume = await findMapById(mapId);
 
   return (
     <Container tag="main">
