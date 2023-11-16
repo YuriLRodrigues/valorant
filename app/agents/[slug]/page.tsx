@@ -1,6 +1,5 @@
 import { AgentsListProps } from "@/types/agents-list-types";
 import AgentDetailsContainer from "./components/agent-details/agent-details-container";
-import { FetchData } from "@/utils/fetch-data";
 import { Container } from "@/components/interface/container";
 import { findAgents } from "@/lib/actions";
 
