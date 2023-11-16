@@ -1,22 +1,21 @@
 import { AutomaticGrid } from "@/components/interface/automatic-grid";
 import { Card } from "@/components/interface/card";
 import { CardTitle } from "@/components/interface/card/card-title";
+import { findGuns } from "@/lib/actions";
 import { GunsProps } from "@/types/guns-list-types";
 import { FetchData } from "@/utils/fetch-data";
 import Image from "next/image";
 
 export const GunsList = async () => {
-  const { data: guns }: GunsProps = await FetchData({
-    url: "https://valorant-api.com/v1/weapons",
-  });
-
+  const guns = await findGuns();
+  console.log(guns);
   return (
     <AutomaticGrid>
       {guns.map((gun) => (
         <Card.Root
-          key={gun.uuid}
+          key={gun.id}
           redirect="guns"
-          uuid={gun.uuid}
+          id={gun.id}
           className="h-[200px] duration-300 shadow shadow-muted-8 border-2 border-muted-9 py-4 hover:bg-gradient-to-b from-red-600 via-red-800 to-red-950"
         >
           <CardTitle className="z-30">{gun.displayName}</CardTitle>
