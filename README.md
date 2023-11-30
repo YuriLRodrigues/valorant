@@ -31,6 +31,6 @@ Instale as dependências com npm install
 Execute o servidor local com npm start
 
 <h3>Este projeto foi desenvolvido com as seguintes tecnologias:</h3>
-- React/Next
-- TailwindCSS
-- Typescript
+React/Next
+TailwindCSS
+Typescript
