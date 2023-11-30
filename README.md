@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Valorant
+Bem-vindo ao meu projeto de Valorant - uma plataforma sofisticada e interativa desenvolvida para os apaixonados pelo jogo Valorant! Este projeto foi meticulosamente construído com Clean Architecture para garantir uma estrutura robusta e escalável em todas as interações com a API externa do Valorant.
 
-## Getting Started
+Sobre o Projeto
+Esta aplicação é um tesouro para os entusiastas do Valorant, oferecendo uma jornada detalhada pelo rico universo do jogo. Com uma ênfase especial na experiência do usuário, combinamos design intuitivo e informações abrangentes para criar um ambiente envolvente.
 
-First, run the development server:
+Recursos Oferecidos
+Mapas Detalhados
+Explore uma galeria completa de mapas do Valorant, mergulhando em suas peculiaridades, estratégias táticas e visuais deslumbrantes. Imagens detalhadas e descrições minuciosas dão vida a cada local.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Página Inicial Cativante
+Nossa página inicial é a porta de entrada para o mundo do Valorant. Design moderno e informações concisas convidam os usuários a explorar e mergulhar mais fundo.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Detalhes das Armas e Skins
+Descubra os segredos por trás de cada arma no jogo Valorant. Além disso, explore uma extensa galeria de skins disponíveis para personalização, proporcionando uma visão detalhada das armas favoritas.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Personagens e suas Habilidades Únicas
+Aqui, você encontrará informações detalhadas sobre os personagens do Valorant, incluindo seus perfis, histórias de fundo e habilidades exclusivas. Prepare-se para entender melhor o que cada agente traz para o campo de batalha.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Modo Claro ou Escuro - Você Escolhe!
+Oferecemos aos usuários a liberdade de escolher entre o modo claro e escuro, garantindo uma experiência visual personalizada e confortável.
 
-## Learn More
+Como Utilizar
+Pré-requisitos
+Node.js instalado
+Conta da API do Valorant (insira a chave da API em config.js)
+Instalação
+Clone este repositório
+Instale as dependências com npm install
+Execute o servidor local com npm start
+Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues, sugerir melhorias ou enviar pull requests.
 
-To learn more about Next.js, take a look at the following resources:
+Autores
+Desenvolvido com ❤️ por [Seu Nome] e [Nome do Colaborador]
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Licença
+Este projeto está sob a Licença [Tipo de Licença]. Veja o arquivo LICENSE para mais detalhes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Agradecimentos
+Agradecemos à comunidade Valorant e aos desenvolvedores da API por tornarem este projeto possível.
