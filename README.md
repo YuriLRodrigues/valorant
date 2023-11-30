@@ -1,7 +1,7 @@
-Valorant
+<h1>Valorant</h1>
 Bem-vindo ao meu projeto de Valorant - uma plataforma sofisticada e interativa desenvolvida para os apaixonados pelo jogo Valorant! Este projeto foi meticulosamente construído com Clean Architecture para garantir uma estrutura robusta e escalável em todas as interações com a API externa do Valorant.
 
-Sobre o Projeto
+<h2>Sobre o Projeto</h2>
 Esta aplicação é um tesouro para os entusiastas do Valorant, oferecendo uma jornada detalhada pelo rico universo do jogo. Com uma ênfase especial na experiência do usuário, combinamos design intuitivo e informações abrangentes para criar um ambiente envolvente.
 
 Recursos Oferecidos
